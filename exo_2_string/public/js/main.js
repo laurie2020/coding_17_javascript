@@ -1,0 +1,12 @@
+let phrase = 'Bonjour tout le monde ';
+console.log(phrase.length);
+phrase = phrase.trim();
+console.log(phrase.length);
+console.log(phrase.charAt(phrase.length-1));
+phrase = phrase.slice(7);
+let bonjour = 'Bonjour';
+phrase = bonjour.concat(phrase);
+phrase = phrase.slice(0, 7);
+let phrase2 = 'Un mot est un number';
+phrase2 = phrase2.replace('number', 'string');
+console.log(Math.floor(Math.random()*100));

@@ -9,10 +9,15 @@ let prenoms = ["martine", "genevieve", "robert", "marie", "jacque", "pierre", "j
 
 // 4.
 // prenoms.forEach(element => {
-//     console.log(element.charAt(1) + element); 
+//     console.log(element.charAt(1)); 
 // })
 
 // 5.
+// prenoms.forEach(element => {
+//     console.log(element.charAt(1) + element); 
+// })
+
+// 6.
 // prenoms.forEach((element, index) => {
 //     if(index % 2 == 0){
 //         console.log(element);

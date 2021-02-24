@@ -52,10 +52,30 @@ button.addEventListener('click', () => {
     input.value = '';
 })
 
-
+let order = false
 let edit = document.querySelector('#exo-li-from-input>button')
 edit.addEventListener('click', () => {
-    let liste = document.querySelectorAll("#exo-li-from-input>")
-    edit.className = "btn btn-success mb-4";
-
+    let listeTab = document.querySelectorAll("#exo-li-from-input>ul>li")
+    if(order == false){
+        edit.className = "btn btn-success mb-4";
+        listeTab[0].addEventListener('click', () => {
+            liste.addEventListener('click', (e) => {
+                let temp = listeTab[0].innerText;
+                listeTab[0].innerText = e.target.innerText;
+                e.target.innerText = temp;
+            })
+        }, false)
+        order = true
+    }else if(order == true){
+        edit.className = "btn btn-light mb-4";
+        listeTab[0].removeEventListener('click', () => {
+            liste.addEventListener('click', (e) => {
+                let temp = listeTab[0].innerText;
+                listeTab[0].innerText = e.target.innerText;
+                e.target.innerText = temp;
+            })
+        }, false)
+    }      
 })
+
+

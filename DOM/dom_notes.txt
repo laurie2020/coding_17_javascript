@@ -1,0 +1,5 @@
+.createElement() ==> creation d'element
+.appendChild() ==> mettre un element dans un autre
+.addEventListener(evenement, fonction) ==> ajouter une fonction qui correspond a une action (click)
+exemple: button.addEventListener('click', () => { console.log('je suis un evenement)};
+('keypress', (e))

@@ -1,0 +1,53 @@
+#jeu {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#top-left,
+#top-middle,
+#top-right,
+#middle-left,
+#middle-middle,
+#middle-right,
+#bottom-left,
+#bottom-middle,
+#bottom-right {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#jeu-container {
+  width: 450px;
+  height: 450px;
+}
+
+#middle-middle {
+  border: 2px black solid;
+}
+
+#top-middle {
+  border-left: 2px black solid;
+  border-right: 2px black solid;
+}
+
+#bottom-middle {
+  border-left: 2px black solid;
+  border-right: 2px black solid;
+}
+
+#middle-left {
+  border-top: 2px black solid;
+  border-bottom: 2px black solid;
+}
+
+#middle-right {
+  border-top: 2px black solid;
+  border-bottom: 2px black solid;
+}
+
+/*# sourceMappingURL=style.css.map */

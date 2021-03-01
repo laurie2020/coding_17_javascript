@@ -131,6 +131,8 @@ egal.addEventListener('click', () => {
             reponse.textContent = parseInt(input1.value) / parseInt(input2.value);
             break;
     }
+    input1.value = "";
+    input2.value = "";
 })
 
 one.addEventListener('click', () => {

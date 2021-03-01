@@ -24,6 +24,8 @@ nav ul li {
   width: 25%;
   padding-top: 5px;
   padding-bottom: 5px;
+  min-width: 90px;
+  max-width: 282px;
 }
 
 #ex1 {
@@ -77,6 +79,12 @@ nav ul li {
   width: 50px;
 }
 
+#container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 #button-group {
   margin-top: 30px;
 }
@@ -94,6 +102,131 @@ nav ul li {
 #ex6 {
   background-color: grey;
   padding: 60px 40px;
+  display: none;
+}
+#ex6 #egal {
+  border: none;
+}
+
+#calculatrice {
+  width: 250px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#calculatrice .button-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: dotted 2px #2b2b2b;
+}
+#calculatrice .button-row button {
+  height: 40px;
+  width: 35px;
+  border: none;
+  border-radius: 5px;
+}
+
+#calcul {
+  height: 35px;
+}
+
+#calcul-result {
+  text-align: right;
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
+  padding-top: 15px;
+}
+
+#numbers {
+  margin-top: 15px;
+}
+
+#ex7 {
+  background-color: grey;
+  padding: 60px 40px;
+  display: none;
+}
+#ex7 input {
+  border-radius: 0;
+}
+#ex7 #btn-group {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+#ex7 #btn-group button {
+  border: white solid 1px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #257914;
+  margin: 2px;
+}
+
+.task {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.task p {
+  margin: 0;
+}
+
+.task-confirm {
+  background-color: #257914;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 10px;
+}
+
+.task-edit {
+  background-color: #ffae00;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.task-delete {
+  background-color: #c90000;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 10px;
+}
+
+@media screen and (max-width: 540px) {
+  #ex7 #btn-group {
+    flex-direction: column;
+  }
+
+  .task {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 530px) {
+  #ex6 {
+    padding: 60px 0;
+  }
+}
+@media screen and (max-width: 455px) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 1090px) {
+  #container {
+    flex-direction: column;
+  }
+
+  #ex4 .move-container {
+    margin-top: 10px;
+    width: 90%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

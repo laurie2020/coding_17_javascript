@@ -74,7 +74,7 @@ nav ul li {
   height: 125px;
   width: 400px;
 }
-#ex4 .move-container #red-square {
+#ex4 .move-container .red-square {
   height: 50px;
   width: 50px;
 }

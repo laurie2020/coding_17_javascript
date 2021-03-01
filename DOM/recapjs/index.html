@@ -47,29 +47,26 @@
             <h2>welcome <span>inconnu</span></h2>
             <p>ecrivez dans l'input ci-dessous le nom de la personne que vous voulez accueillir</p>
             <p>lorsque vous cliquez sur le bouton "go" le nom que vous avez ajouté dans l'input sera alors mis dans le span du h2 et l'input sera alors vidé de tout contenu. Attention, interdiction de toucher au html</p>
-            <form action="" class="d-flex align-items-center" id="ex3-form">
-                <input type="text" id="input3"><button type="submit">go</button>
-            </form>
-            
+            <input type="text" id="input3"><button type="">go</button>  
         </div>
         <div id="ex4">
             <h2>Déplacer les éléments</h2>
             <div class="" id="container">
-                <div class="move-container bg-primary d-flex justify-content-center align-items-center">
-                    <div id="red-square" class="bg-danger"></div>
+                <div class="move-container bg-primary d-flex justify-content-center align-items-center" id="left">
+                    <div class="bg-danger red-square"></div>
                 </div>
-                <div class="move-container bg-primary d-flex justify-content-center align-items-center"></div>
+                <div class="move-container bg-primary d-flex justify-content-center align-items-center" id="right"></div>
             </div>
             <div class="d-flex justify-content-center align-items-center flex-column" id="button-group">
                 <button type="button" class="btn btn-warning">change place</button>
-                <button type="button" class="btn btn-success">nombre de click <span>0</span></button>
+                <button type="button" class="btn btn-success" id="counter">nombre de click <span>0</span></button>
             </div>
         </div>
         <div id="ex5">
             <h2>Générer des éléments du DOM</h2>
             <p>Cliquer sur le bouton ci-dessous pour générer des oeufs</p>
-            <button type="button" class="btn btn-success">Ajouter un oeuf</button>
-            <div>
+            <button type="button" class="btn btn-success" id="add-oeuf">Ajouter un oeuf</button>
+            <div id="oeuf-container">
                 <img src="./public/img/oeuf.png" alt="" width="150">
             </div>
         </div>
@@ -78,11 +75,11 @@
             <div>
                 <h3>Niveau 1</h3>
                 <div>
-                    <input type="text">
+                    <input type="text" id="input1">
                     <button class="btn">+</button>
-                    <input type="text">
+                    <input type="text" id="input2">
                     <button id="egal">=</button>
-                    <span>?</span>
+                    <span id="reponseNiveau1">?</span>
                 </div>
             </div>
             <div>

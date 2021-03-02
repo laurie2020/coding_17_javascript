@@ -373,3 +373,119 @@ clear.addEventListener('click', () => {
     op = false;
 })
 // fin exo6
+
+//exo7
+// creation d'une nouvelle task
+let taskInput = document.querySelector("#ex7 input");
+let tout = document.querySelector("#tout");
+let complete = document.querySelector("#complete");
+let aFaire = document.querySelector("#a-faire")
+let liste = document.querySelector("#list")
+
+taskInput.addEventListener('keydown', (e) => {
+    if(e.key == "Enter" && taskInput.value.trim().length > 0){
+        let newTask = document.createElement("div");
+        newTask.className = "task aFaire";
+        let taskText = document.createElement("p");
+        taskText.textContent = taskInput.value;
+        taskInput.value = "";
+        newTask.appendChild(taskText);
+        let editTask = document.createElement("input");
+        editTask.style.display = "none";
+        newTask.appendChild(editTask);
+        let btnGroup = document.createElement("div");
+        // btnCheck
+        let btnCheck = document.createElement("button");
+        btnCheck.className = "task-confirm";
+        let iconeCheck = document.createElement("i");
+        iconeCheck.className = "fas fa-check";
+        btnCheck.appendChild(iconeCheck);
+        btnGroup.appendChild(btnCheck);
+        // btnEdit
+        let btnEdit = document.createElement("button");
+        btnEdit.className = "task-edit";
+        let iconeEdit = document.createElement("i");
+        iconeEdit.className = "fas fa-edit";
+        btnEdit.appendChild(iconeEdit);
+        btnGroup.appendChild(btnEdit);
+        // btnDelete
+        let btnDelete = document.createElement("button");
+        btnDelete.className = "task-delete";
+        let iconeDelete = document.createElement("i");
+        iconeDelete.className = "fas fa-trash-alt";
+        btnDelete.appendChild(iconeDelete);
+        btnGroup.appendChild(btnDelete);
+        newTask.appendChild(btnGroup);
+        liste.appendChild(newTask);
+        
+    }
+    let buttonCheck = document.getElementsByClassName("task-confirm");
+    let tasks = document.querySelectorAll("#list .task");
+    for(let i = 0; i < buttonCheck.length; i++){
+        buttonCheck[i].addEventListener('click', () => {
+            buttonCheck[i].parentElement.parentElement.style.backgroundColor = "#257914"
+            buttonCheck[i].parentElement.parentElement.className = "task check"
+            console.log(buttonCheck[i].parentElement.parentElement.className);
+        })
+    }
+    let buttonEdit = document.getElementsByClassName("task-edit");
+    let onOffEdit = false;
+    for(let i = 0; i < buttonEdit.length; i++){
+        buttonEdit[i].addEventListener('click', () => {
+            let input = buttonEdit[i].parentElement.previousElementSibling;
+            let p = input.previousElementSibling;
+            if(onOffEdit == false){
+                input.style.display = "block";
+                p.style.display = "none";
+                input.value = p.textContent;
+                onOffEdit = true;
+            } else if (onOffEdit == true){
+                p.textContent = input.value;
+                input.style.display = "none";
+                p.style.display = "block";
+                onOffEdit = false;
+            }
+        })
+    }
+    let buttonDelete = document.getElementsByClassName("task-delete");
+    for (let i = 0; i < buttonDelete.length; i++) {
+        buttonDelete[i].onclick = function() {
+            this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+        }
+    }
+    
+    tout.addEventListener("click", () => {
+        for (let i = 0; i < tasks.length; i++) {
+            if (tasks[i].style.display == "none") {
+                tasks[i].style.display = "flex";
+            }   
+        }
+            
+    })
+    complete.addEventListener('click', () => {
+        tasks.forEach(element => {
+            if (element.className == "task aFaire") {
+                element.style.display = "none";
+            }else if(element.className == "task check"){
+                element.style.display = "flex"
+            }
+        });
+    })
+    aFaire.addEventListener('click', () => {
+        tasks.forEach(element => {
+            if (element.className == "task aFaire") {
+                element.style.display = "flex";
+            }else if(element.className == "task check"){
+                element.style.display = "none"
+            }
+        });
+    })
+    
+})
+
+// eventListener sur tous les boutons
+
+
+
+
+// fin exo7

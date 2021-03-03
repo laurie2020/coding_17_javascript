@@ -16,70 +16,106 @@ cross.style.fontSize = "100px";
 let circle = document.createElement('i');
 circle.className = "far fa-circle";
 circle.style.fontSize = "100px";
-let symbol = prompt('Tu veux etre une x ou un o ?');
-let onOff = true;
-for(let i = 0; casesCopy[i]; i++){
-    if(symbol == "x"){
-        topLeft.addEventListener('click', () => {
-            if(onOff == true){
-                topLeft.appendChild(cross);
-                casesCopy.splice(casesCopy.indexOf(topLeft), 1);
-                console.log(casesCopy);
-                setTimeout(() => {
-                    let computer = Math.round(Math.random() * casesCopy.length)
-                    cases[computer].appendChild(circle);
-                    casesCopy.splice(casesCopy[computer], 1);
-                    console.log(casesCopy);
-                }, 1000)
-            }  
-        })
-        topMiddle.addEventListener('click', () => {
-            if(onOff == true){
-                topMiddle.appendChild(cross); 
+// let symbol = prompt('Tu veux etre une x ou un o ?');
+
+let determineWinner = () => {
+    if(topLeft.firstElementChild){
+        if(topMiddle.firstElementChild && topRight.firstElementChild){
+            if(topLeft.firstElementChild.className == topMiddle.firstElementChild.className && topMiddle.firstElementChild.className == topRight.firstElementChild.className){
+                alert("you won");
             }
-            
-        })
-        topRight.addEventListener('click', () => {
-            if(onOff == true){
-                topRight.appendChild(cross);
+        }else if(middleLeft.firstElementChild && bottomLeft.firstElementChild){
+            if(topLeft.firstElementChild.className == middleLeft.firstElementChild.className && middleLeft.firstElementChild.className == bottomLeft.firstElementChild.className){
+                alert("you won");
             }
-            
-        })
-        middleLeft.addEventListener('click', () => {
-            if(onOff == true){
-                middleLeft.appendChild(cross);
+        }
+    }
+    if(bottomRight.firstElementChild){
+        if(topRight.firstElementChild && middleRight.firstElementChild){
+            if(bottomRight.firstElementChild.className == topRight.firstElementChild.className && topRight.firstElementChild.className == middleRight.firstElementChild.className){
+                alert("you won");
             }
-            
-        })
-        middleMiddle.addEventListener('click', () => {
-            if(onOff == true){
-                middleMiddle.appendChild(cross);
+        }else if(bottomLeft.firstElementChild && bottomMiddle.firstElementChild){
+            if(bottomRight.firstElementChild.className == bottomLeft.firstElementChild.className && bottomLeft.firstElementChild.className == bottomMiddle.firstElementChild.className){
+                alert("you won");
             }
-            
-        })
-        middleRight.addEventListener('click', () => {
-            if(onOff == true){
-                middleRight.appendChild(cross);
+        }
+    }
+    if(middleMiddle.firstElementChild){
+        if(topMiddle.firstElementChild && bottomMiddle.firstElementChild){
+            if(middleMiddle.firstElementChild.className == topMiddle.firstElementChild.className && topMiddle.firstElementChild.className == bottomMiddle.firstElementChild.className){
+                alert("you won");
             }
-            
-        })
-        bottomLeft.addEventListener('click', () => {
-            if(onOff == true){
-                bottomLeft.appendChild(cross);
+        }else if(middleLeft.firstElementChild && middleRight.firstElementChild){
+            if(middleMiddle.firstElementChild.className == middleLeft.firstElementChild.className && middleLeft.firstElementChild.className == middleRight.firstElementChild.className){
+                alert("you won");
             }
-            
-        })
-        bottomMiddle.addEventListener('click', () => {
-            if(onOff == true){
-                bottomMiddle.appendChild(cross);
+        }else if(topLeft.firstElementChild && bottomRight.firstElementChild){
+            if(middleMiddle.firstElementChild.className == topLeft.firstElementChild.className && topLeft.firstElementChild.className == bottomRight.firstElementChild.className){
+                alert("you won");
             }
-            
-        })
-        bottomRight.addEventListener('click', () => {
-            if(onOff == true){
-                bottomRight.appendChild(cross);
+        }else if(topRight.firstElementChild && bottomLeft.firstElementChild){
+            if(middleMiddle.firstElementChild.className == topRight.firstElementChild.className && topRight.firstElementChild.className == bottomLeft.firstElementChild.className){
+                alert("you won");
             }
-            
-        })
+        }
     }
 }
+console.log(casesCopy);
+// cases.forEach(element => {
+//     element.addEventListener('click', () => {
+//         let user;
+//         let computer;
+//         if(symbol == "x"){
+//             user = cross.cloneNode();
+//             computer = circle.cloneNode()
+//             casesCopy.splice(casesCopy.indexOf(element), 1);
+//             element.appendChild(user);
+//             console.log(casesCopy);
+//             if(casesCopy.length > 0){
+//                 setTimeout(() => {
+//                     let index = Math.floor(Math.random()*casesCopy.length)
+//                     casesCopy[index].appendChild(computer)
+//                     casesCopy.splice(index, 1);
+//                     console.log(casesCopy);
+//                 }, 2000)
+//                 determineWinner();   
+//             }  
+//         }else if(symbol == "o"){
+//             user = circle.cloneNode();
+//             computer = cross.cloneNode()
+//             newIcone = circle.cloneNode();
+//             casesCopy.splice(casesCopy.indexOf(element), 1);
+//             element.appendChild(user);
+//             if(casesCopy.length > 0){
+//                 setTimeout(() => {
+//                     let index = Math.floor(Math.random()*casesCopy.length)
+//                     casesCopy[index].appendChild(computer)
+//                     casesCopy.splice(index, 1);
+//                     console.log(casesCopy);
+//                 }, 2000)      
+//             } 
+//         }
+//     })      
+// })
+let onOff = "off";
+cases.forEach(element => {
+    element.addEventListener('click', () => {
+        if(onOff == "on"){
+            console.log(onOff);
+            onOff == "off";
+            let crossClone = cross.cloneNode();
+            casesCopy.splice(casesCopy.indexOf(element), 1);
+            element.appendChild(crossClone);
+
+        }
+        if(onOff == "off"){
+            log
+            onOff == "on";
+            let circleClone = circle.cloneNode();
+            casesCopy.splice(casesCopy.indexOf(element), 1);
+            element.appendChild(circleClone);
+        }
+    })
+        
+});

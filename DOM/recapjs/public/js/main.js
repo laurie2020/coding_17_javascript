@@ -232,100 +232,80 @@ one.addEventListener('click', () => {
     calcul.value += one.textContent
     if(op == false){
         nbr1 += one.textContent;
-        console.log(nbr1);
     }else if(op == true){
         nbr2 += one.textContent
-        console.log(nbr2);
     }  
 })
 two.addEventListener('click', () => {
     calcul.value += two.textContent
     if(op == false){
         nbr1 += two.textContent;
-        console.log(nbr1);
     }else if(op == true){
         nbr2 += two.textContent
-        console.log(nbr2);
     }  
 })
 three.addEventListener('click', () => {
     calcul.value += three.textContent
     if(op == false){
         nbr1 += three.textContent;
-        console.log(nbr1);
     }else if(op == true){
         nbr2 += three.textContent
-        console.log(nbr2);
     }  
 })
 four.addEventListener('click', () => {
     calcul.value += four.textContent
     if(op == false){
         nbr1 += four.textContent;
-        console.log(nbr1);
     }else if(op == true){
         nbr2 += four.textContent
-        console.log(nbr2);
     }  
 })
 five.addEventListener('click', () => {
     calcul.value += five.textContent
     if(op == false){
         nbr1 += five.textContent;
-        console.log(nbr1);
     }else if(op == true){
         nbr2 += five.textContent
-        console.log(nbr2);
     }  
 })
 six.addEventListener('click', () => {
     calcul.value += six.textContent
     if(op == false){
         nbr1 += six.textContent;
-        console.log(nbr1);
     }else if(op == true){
         nbr2 += six.textContent
-        console.log(nbr2);
     }  
 })
 seven.addEventListener('click', () => {
     calcul.value += seven.textContent
     if(op == false){
         nbr1 += seven.textContent;
-        console.log(nbr1);
     }else if(op == true){
         nbr2 += seven.textContent
-        console.log(nbr2);
     }  
 })
 eight.addEventListener('click', () => {
     calcul.value += eight.textContent
     if(op == false){
         nbr1 += eight.textContent;
-        console.log(nbr1);
     }else if(op == true){
         nbr2 += eight.textContent
-        console.log(nbr2);
     }  
 })
 nine.addEventListener('click', () => {
     calcul.value += nine.textContent
     if(op == false){
         nbr1 += nine.textContent;
-        console.log(nbr1);
     }else if(op == true){
         nbr2 += nine.textContent
-        console.log(nbr2);
     }  
 })
 zero.addEventListener('click', () => {
     calcul.value += zero.textContent
     if(op == false){
         nbr1 += zero.textContent;
-        console.log(nbr1);
     }else if(op == true){
         nbr2 += zero.textContent
-        console.log(nbr2);
     }  
 })
 plus.addEventListener('click', () => {
@@ -348,7 +328,6 @@ divi.addEventListener('click', () => {
     operateur = "/"
     op = true
 })
-console.log(equal);
 equal.addEventListener('click', () => {
     if(operateur == "+"){
         resultat.textContent = `${calcul.value} = ${parseInt(nbr1) + parseInt(nbr2)}`
@@ -425,7 +404,6 @@ taskInput.addEventListener('keydown', (e) => {
         buttonCheck[i].addEventListener('click', () => {
             buttonCheck[i].parentElement.parentElement.style.backgroundColor = "#257914"
             buttonCheck[i].parentElement.parentElement.className = "task check"
-            console.log(buttonCheck[i].parentElement.parentElement.className);
         })
     }
     let buttonEdit = document.getElementsByClassName("task-edit");
